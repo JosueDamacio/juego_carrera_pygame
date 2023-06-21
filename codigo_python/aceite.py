@@ -50,7 +50,7 @@ class Aceite :
                     objeto.reaparecer()
                     self.flag_aceite = False
 
-            pygame.draw.rect(pantalla, colores.WHITE, objeto.rect_hitbox)
+            #pygame.draw.rect(pantalla, colores.WHITE, objeto.rect_hitbox)
             pantalla.blit(objeto.imagen, objeto.rect_hitbox)
         texto_en_pantalla.actualiza_monedas(pantalla, player)
 

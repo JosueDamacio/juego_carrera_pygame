@@ -62,7 +62,7 @@ lista_camino = camino.lista_imagenes()
 obj_coin = Moneda(60,60,"Fotos\coin.png",2,25)
 lista_coins = obj_coin.crear_lista_objeto()
 #objeto aceite
-obj_aceite = Aceite(50,50,"Fotos\oil_car.png",1,25)
+obj_aceite = Aceite(65,65,"Fotos\oil_car.png",1,25)
 lista_aceite = obj_aceite.crear_lista_objeto()
 #objeto vida
 obj_vida = Curacion(90,90,"Fotos\curacion.png",1,25)
@@ -78,5 +78,5 @@ menu_btn = Boton(50,780,150,70,"Fotos\menu_btn.png")
 info_img = Imagen(0,0,ANCHO_VENTANA,ALTO_VENTANA,"Fotos\informacion.png")
 #CONTROLA VENTANA A MOSTRAR------------------------------------------------------------
 #--------------------------------------------------------------------------------------
-mostrar = 0
+mostrar = 4
 run = True

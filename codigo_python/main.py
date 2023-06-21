@@ -70,8 +70,10 @@ sonido_aceite.set_volume(0.3)
 sonido_moneda = pygame.mixer.Sound("sonidos\coin.mp3")
 sonido_moneda.set_volume(0.2)
 
+musica_informacion = pygame.mixer.Sound("sonidos\inicio_music_bajo.mp3")
+musica_informacion.set_volume(0.05)
 musica_menu = pygame.mixer.Sound("sonidos\inicio_music_bajo.mp3")
-musica_menu.set_volume(0.1)
+musica_menu.set_volume(0.05)
 musica_en_juego = pygame.mixer.Sound("sonidos\in_game_2.mp3")
 musica_en_juego.set_volume(0.03)
 musica_game_over = pygame.mixer.Sound("sonidos\game_over.mp3")
@@ -97,6 +99,7 @@ while run:
 
     lista_evento = pygame.event.get()
     if mostrar == 0:
+        musica_informacion.stop()
         musica_game_over.stop()
         musica_menu.play(-1)
 
@@ -175,7 +178,6 @@ while run:
                 if login_btn.rectangulo.collidepoint(lista_click):
                     canal_sonidos.play(sonido_botones)
                     mostrar = login_btn.clickeado(lista_click, mostrar, 1,2)
-                    print(nombre)
                     player.nombre = nombre
                 else:
                     continue
@@ -204,15 +206,6 @@ while run:
 
         for evento in lista_evento:
             if evento.type == pygame.QUIT:
-                player.calcula_score()
-                try:
-                    jugador_datos = (player.nombre, player.final_score)
-                    conexion.execute("INSERT INTO jugadores (nombre_jugador, puntaje) VALUES (?, ?)", jugador_datos)
-                    conexion.commit()
-                    canal_sonidos.play(sonido_botones)
-                    print("Jugador insertado exitosamente")
-                except sqlite3.Error as error:
-                    print("Error al insertar el jugador:", error)
                 run = False
             #contador de tiempo
             if evento.type == pygame.USEREVENT+10:
@@ -274,7 +267,8 @@ while run:
                     pass
     #INFORMACION
     if mostrar == 4:
-        musica_en_juego.play(-1)
+        musica_menu.stop()
+        musica_informacion.play(-1)
         info_img.mostrar_imagen(ventana_principal)
         menu_btn.mostrar_imagen(ventana_principal)
 

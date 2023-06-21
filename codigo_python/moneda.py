@@ -48,7 +48,7 @@ class Moneda :
                 player.monedas += 100
                 objeto.reaparecer()
             pantalla.blit(objeto.imagen, objeto.img_dimensiones)
-            pygame.draw.rect(pantalla, colores.GREENYELLOW, objeto.rect_hitbox)
+            #pygame.draw.rect(pantalla, colores.GREENYELLOW, objeto.rect_hitbox)
         texto_en_pantalla.actualiza_monedas(pantalla, player)
 
     def avanzar(self, lista_objeto,player):
