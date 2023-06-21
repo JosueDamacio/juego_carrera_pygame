@@ -7,10 +7,6 @@ from funcion_guardar import guardar_progreso
 
 import sqlite3
 
-'''
-agregar sonido de aceite y vida
--Skins random a enemigo
-'''
 acu_segundos = 0
 acu_minutos = 0
 
@@ -129,7 +125,6 @@ while run:
                     else:
                         canal_sonidos.play(sonido_botones)
                         print(" ERROR debes ingresar nombre")
-
 
             if evento.type == pygame.USEREVENT + 1:
                 if evento.type == timer_20_ms:

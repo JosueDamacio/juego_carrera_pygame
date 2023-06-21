@@ -1,6 +1,8 @@
 import sqlite3
 
 def guardar_progreso (player,conexion):
+    #luego de hacer la conexion con la base de datos, guarda los datos
+    #que tiene "player" en sus atributos
     player.calcula_score()
     try:
         jugador_datos = (player.nombre, player.final_score)

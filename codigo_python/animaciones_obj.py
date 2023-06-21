@@ -30,7 +30,7 @@ class Animación:
 
     def actualizar(self):
     #en el caso de animaciones debemos limitar la cantidad de filas y columnas
-    #para que no se nos vaya de mambo
+    #para que no se nos vaya
         #print("EL FRAME ACTUAL ES", self.frame_actual)
         if (self.frame_actual < len(self.animacion)-1):
             self.frame_actual += 1

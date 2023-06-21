@@ -49,7 +49,6 @@ class AutoEnemigo:
     def crear_lista_enemigo(self):
         lista_enemigos = []
         for e in range(self.cantidad):
-            #el code piensa que esto es una tupla... y lo es xd
             enemigo = AutoEnemigo(self.ancho,
                                   self.alto,
                                   self.skins_totales,
@@ -72,8 +71,6 @@ class AutoEnemigo:
                 player.control_movimiento = 0
                 player.vida -= 1
                 player.monedas -= 75
-                #hacer que la explosion tomer las posicones del auto como parametro para mostrarse, porque sino no se mostrara correctamente
-                #verificar que la explosion sea para el auto chocado en cuestion y no todos
                 self.mostrar_explosion = True
                 self.movimiento = self.movimiento *(-1 * velocidad_de_rebasamiento)
  
@@ -91,3 +88,5 @@ class AutoEnemigo:
             #pygame.draw.rect(pantalla, colores.RED4, enemigo.rect_hitbox)
         texto_en_pantalla.actualiza_monedas(pantalla,player)
         texto_en_pantalla.actualiza_vida(pantalla, player)
+
+#hola

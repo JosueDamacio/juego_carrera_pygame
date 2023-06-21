@@ -27,10 +27,10 @@ Otro problema que hay es el aceite que los autos dejan en el piso, al pisarlo, p
 el personaje aparece siempre en un lugar pasado por parametros dentro del archivo "parametros.py", ahí es donde se instancia el bojeto de la clase "Personaje", que es usada para crear un player con los siguientes atributos:
 ~~~
 class Personaje:
-    def __init__(self, ancho,alto,skin, x, y,vidas_totales): #VELOCIDAD ENTORNO AGREGADO
+    def __init__(self, ancho,alto,skin, x, y,vidas_totales):
         self.path = skin
         self.imagen = getSuperficie(self.path, ancho, alto)
-        self.rect_img = pygame.Rect(x, y, 300, 150) #300 y 150 son valores no utilizados
+        self.rect_img = pygame.Rect(x, y, 300, 150)
         self.rect_hitbox = pygame.Rect(x + 9, y + 20, 120, 48)
         self.control_movimiento = 1
         self.mancha_aceite = 1

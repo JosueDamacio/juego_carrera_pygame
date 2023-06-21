@@ -13,4 +13,5 @@ class Imagen:
         
     
     def mostrar_imagen(self, pantalla):
+        #blitea la imagen deacuerdo a las coordenadas de su atributo
         pantalla.blit(self.imagen, (self.coordenada_x, self.coordenada_y))

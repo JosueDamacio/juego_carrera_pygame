@@ -3,7 +3,6 @@ import colores
 
 #se encarga de mostrar la vida, el tiempo y las monedas, estas funciones 
 #se llaman desde distintas partes del codigo segun lo requieran
-
 def actualiza_vida(ventana, personaje):
     font = pygame.font.SysFont("Arial Narrow", 45)
     text = font.render("Vidas: {0}".format(personaje.vida), True, colores.RED2)

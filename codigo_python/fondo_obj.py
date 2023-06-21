@@ -17,7 +17,7 @@ class FondoEnMovimiento():
         self.alto = self.rect_imagen.height  # Obtiene el alto del rectángulo
         self.movimiento_ingresado = movimiento
         self.movimiento = self.movimiento_actual(player)
-        self.cantidad = cantidad_imagenes #cuantas imagenes deben aparecer una detras de otra para no dejar un espacio vacio en la pantalla
+        self.cantidad = cantidad_imagenes
         self.player = player
 
     def movimiento_actual(self, player):
@@ -30,7 +30,14 @@ class FondoEnMovimiento():
         lista_imagenes = []
         eje_x_agregado = 0
         for img in range(self.cantidad):
-            imagen = FondoEnMovimiento(self.pos_x, self.pos_y, self.ancho, self.alto, self.path, self.cantidad, self.movimiento, self.player)
+            imagen = FondoEnMovimiento(self.pos_x,
+                                        self.pos_y,
+                                        self.ancho,
+                                        self.alto,
+                                        self.path,
+                                        self.cantidad,
+                                        self.movimiento,
+                                        self.player)
             imagen.pos_x = eje_x_agregado
             lista_imagenes.append(imagen)
             eje_x_agregado += self.ancho
