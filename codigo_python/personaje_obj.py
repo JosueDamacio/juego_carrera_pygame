@@ -2,10 +2,6 @@ import pygame
 import colores
 import random
 
-def skin_aleatoria(self):
-        skin_aleatoria = random.choices(self.skins_totales,self.probabilidades)[0]
-        return (skin_aleatoria)
-
 def getSuperficie(path, ancho, alto):
     surface_imagen = pygame.image.load(path)
     surface_imagen = pygame.transform.scale(surface_imagen, (ancho, alto))
