@@ -17,24 +17,20 @@ class Personaje:
         self.imagen = getSuperficie(self.path, ancho, alto)
         self.rect_img = pygame.Rect(x, y, 300, 150) #300 y 150 son valores no utilizados
         self.rect_hitbox = pygame.Rect(x + 9, y + 20, 120, 48)
-        self.control_movimiento = 1 #esto multiplica las velocidades del fondo, para que de ello dependa el movimineto de todo
+        self.control_movimiento = 1
         self.mancha_aceite = 1
-        self.invulnerable = False #funciona
-        self.chocado = False
+        self.invulnerable = False
         self.vida = vidas_totales
         self.nombre = ""
         self.tiempo_jugado = 0
         self.monedas = 0
         self.final_score = 0
+        #self.control_movimineto multiplica las velocidades del fondo, para que
+        #de ello dependa el movimineto de su entorno, paisaje y objetos como monedas
 
     def actualizar_pantalla(self, pantalla):
         pantalla.blit(self.imagen, self.rect_img)
         #pygame.draw.rect(pantalla, colores.BLUEVIOLET, self.rect_hitbox)
-
-        #agregar aqui la animacion de explosion
-        if self.chocado == True:
-            #print("BOOM")
-            pass
  
     def movimiento(self, velocidad, eje):
         cantidad = (velocidad * self.mancha_aceite)

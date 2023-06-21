@@ -3,7 +3,9 @@ from imagenes_en_pantalla import Imagen
 
 class Boton(Imagen):
     def __init__(self, x, y, ancho, alto, path) -> None:
-        super().__init__(x, y, ancho, alto, path)#hace referencia a la clase padre
+        #esta es una clase heredera de Imagen, pero le agrega un rectangulo
+        #que interactua con el click del mouse
+        super().__init__(x, y, ancho, alto, path)
 
         self.rectangulo = pygame.Rect(x, y, ancho, alto)
 

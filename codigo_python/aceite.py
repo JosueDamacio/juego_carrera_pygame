@@ -28,6 +28,7 @@ class Aceite :
         self.flag_aceite = False
 
     def crear_lista_objeto(self):
+        #por cada auto ingresado, se crea un objeto con el tipo auto
         lista_objetos = []
         for o in range(self.cantidad):
             objeto = Aceite(self.ancho,self.alto,self.img_path,self.cantidad,self.movimiento)
@@ -35,6 +36,8 @@ class Aceite :
         return lista_objetos
     
     def actualizar_en_pantalla(self,lista_objetos,pantalla,player):
+        #se encarga de ejecutar sus efectos respecto a la pantalla
+        #o interaccion con el jugador
         for objeto in lista_objetos:
             if objeto.img_dimensiones.x < -800:
                 objeto.reaparecer()

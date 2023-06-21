@@ -23,6 +23,7 @@ No todo son malas noticias, de vez en cuando tambien aparecerán corazones que t
 ![imagen_info](./fotos_md/informacion.png)
 
 
+
 ### video del juego:
 
 - [>Aqui<](https://clipchamp.com/watch/r5XmVrAqoIQ)
