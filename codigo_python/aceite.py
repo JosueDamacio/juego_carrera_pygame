@@ -65,13 +65,3 @@ class Aceite :
         self.img_dimensiones.y = random.randrange(600,850,25)
         self.rect_hitbox.x = self.img_dimensiones.x + 7
         self.rect_hitbox.y = self.img_dimensiones.y + 7
-
-    '''
-    def reaparecer(self):
-        porcentaje = 0.05
-        self.img_dimensiones.x = random.randrange(1700, 4100, 100)
-        self.img_dimensiones.y = random.randrange(520, 850, 50)
-        self.rect_hitbox.x = self.img_dimensiones.x + (self.ancho // 2) - (self.rect_hitbox.width // 2)
-        self.rect_hitbox.y = self.img_dimensiones.y + (self.alto // 2) - (self.rect_hitbox.height // 2)
-
-    '''

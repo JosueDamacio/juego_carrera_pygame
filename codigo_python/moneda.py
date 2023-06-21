@@ -56,14 +56,3 @@ class Moneda :
             avance_entero = int(self.movimiento * player.control_movimiento)
             objeto.img_dimensiones.x -= avance_entero
             objeto.rect_hitbox.x -= avance_entero
-
-
-    '''
-    def reaparecer(self):
-        porcentaje = 0.05
-        self.img_dimensiones.x = random.randrange(1700, 4100, 100)
-        self.img_dimensiones.y = random.randrange(520, 850, 50)
-        self.rect_hitbox.x = self.img_dimensiones.x + (self.ancho // 2) - (self.rect_hitbox.width // 2)
-        self.rect_hitbox.y = self.img_dimensiones.y + (self.alto // 2) - (self.rect_hitbox.height // 2)
-
-    '''

@@ -67,6 +67,8 @@ sonido_vida = pygame.mixer.Sound("sonidos\\aceite.mp3")
 sonido_vida.set_volume(0.3)
 sonido_aceite = pygame.mixer.Sound("sonidos\one_more_heart.mp3")
 sonido_aceite.set_volume(0.3)
+sonido_moneda = pygame.mixer.Sound("sonidos\coin.mp3")
+sonido_moneda.set_volume(0.2)
 
 musica_menu = pygame.mixer.Sound("sonidos\inicio_music_bajo.mp3")
 musica_menu.set_volume(0.1)
@@ -154,9 +156,9 @@ while run:
         for evento in lista_evento:
             if evento.type == pygame.QUIT:
                 run = False
-            #ingreso de nombre con un maximo de 5 caracteres
+            #ingreso de nombre con un maximo de 6 caracteres
             if evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_BACKSPACE or len(nombre) == 5:
+                if evento.key == pygame.K_BACKSPACE or len(nombre) == 6:
                     nombre = nombre[0:-1]
                 else:
                     nombre += evento.unicode

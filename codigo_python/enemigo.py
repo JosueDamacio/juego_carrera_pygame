@@ -3,6 +3,9 @@ import random
 import texto_en_pantalla
 import colores
 
+def skin_aleatoria(self):
+        skin_aleatoria = random.choices(self.skins_totales,self.probabilidades)[0]
+        return (skin_aleatoria)
 
 def getSuperficie(path, ancho, alto):
     #reajusta el tamaño de la imagen y devuelve la superficie
@@ -11,11 +14,13 @@ def getSuperficie(path, ancho, alto):
     return surface_imagen
 
 class AutoEnemigo:
-    def __init__(self, ancho, alto, path,numero_de_autos, velocidad):
+    def __init__(self, ancho, alto,skins:list,probabilidades:list ,numero_de_autos, velocidad):
+        self.skins_totales = skins
+        self.probabilidades = probabilidades
+        self.path = skin_aleatoria(self)
+        self.imagen = getSuperficie(self.path, ancho, alto)
         self.ancho = ancho
         self.alto = alto
-        self.img_path = path
-        self.imagen = getSuperficie(path, ancho, alto)
         self.cantidad = numero_de_autos
         self.movimiento = velocidad
         self.imagen_rect = self.imagen.get_rect()
@@ -41,18 +46,16 @@ class AutoEnemigo:
             objeto.imagen_rect.x -= avance_entero
             objeto.rect_hitbox.x -= avance_entero
 
-
-    '''def reaparecer(self):
-        self.rect_hitbox.x = random.randrange(1700,4100,100) #rango de aparicion continua
-        self.rect_hitbox.y = random.randrange(600,850,50)
-        self.imagen_rect.x = self.rect_hitbox.x + 10
-        self.imagen_rect.y = self.rect_hitbox.y - 10'''
-
     def crear_lista_enemigo(self):
         lista_enemigos = []
         for e in range(self.cantidad):
             #el code piensa que esto es una tupla... y lo es xd
-            enemigo = AutoEnemigo(self.ancho,self.alto,self.img_path,self.cantidad,self.movimiento)
+            enemigo = AutoEnemigo(self.ancho,
+                                  self.alto,
+                                  self.skins_totales,
+                                  self.probabilidades,
+                                  self.cantidad,
+                                  self.movimiento)
             lista_enemigos.append(enemigo)
         return lista_enemigos
 
@@ -73,7 +76,7 @@ class AutoEnemigo:
                 #verificar que la explosion sea para el auto chocado en cuestion y no todos
                 self.mostrar_explosion = True
                 self.movimiento = self.movimiento *(-1 * velocidad_de_rebasamiento)
-
+ 
             if enemigo.imagen_rect.x > 4100:
                 contador_autos_avanzados += 1
                 if contador_autos_avanzados > (self.cantidad -1):

@@ -9,3 +9,5 @@ def guardar_progreso (player,conexion):
         print("Jugador insertado exitosamente")
     except sqlite3.Error as error:
         print("Error al insertar el jugador:", error)
+        
+#podría también agregarse la creacion de la base de datos como una funcion
