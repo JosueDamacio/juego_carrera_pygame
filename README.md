@@ -97,4 +97,4 @@ hay más funcionalidades, codigo y archivos que no me dio tiempo de documentar, 
 
 ### video del juego:
 
-- [>Aqui<](https://clipchamp.com/watch/r5XmVrAqoIQ)
+- [>Aqui<](https://youtu.be/ssbtzt01SbQ)
